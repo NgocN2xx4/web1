@@ -104,7 +104,7 @@ router.get('/edit/:id', admin, async (req, res) => {
   const id = req.params.id;
   var categories = await CategoryModel.find({});
   var product = await ProductModel.findById(id).populate('category');
-  res.render('admin/product', { title: 'Update Product', categories, product, user});
+  res.render('admin/product', { title: 'Update Product', categories, product, user, message });
 });
 
 router.post('/edit/:id', async (req, res) => {
